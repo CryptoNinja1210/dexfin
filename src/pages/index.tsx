@@ -23,7 +23,7 @@ export async function getStaticProps() {
 
 export default function Aggregator(props) {
 	return (
-		<Layout>
+		<Layout title={`Dexfin - Dex Aggregator`} defaultSEO>
 			<Header>
 				<ConnectButton {...props} />
 			</Header>
