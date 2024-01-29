@@ -1,7 +1,8 @@
-import * as React from 'react';
+import React from "react"
 import Head from 'next/head';
 import styled from 'styled-components';
 import ThemeProvider, { GlobalStyle } from '~/Theme';
+import CryptoContext from "~/utils/Crypto"
 // import { Phishing } from './Phishing';
 
 const PageWrapper = styled.div`
@@ -42,10 +43,12 @@ export default function Layout({ title, children, ...props }: ILayoutProps) {
 				<title>{title}</title>
 			</Head>
 			<ThemeProvider>
-				<GlobalStyle />
-				<PageWrapper>
-					<Center {...props}>{children}</Center>
-				</PageWrapper>
+				<CryptoContext>
+					<GlobalStyle />
+					<PageWrapper>
+						<Center {...props}>{children}</Center>
+					</PageWrapper>
+				</CryptoContext>
 			</ThemeProvider>
 		</>
 	);
