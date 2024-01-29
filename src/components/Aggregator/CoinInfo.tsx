@@ -24,10 +24,9 @@ const CoinInfo = (props: { chain: any }) => {
 
   const fetchHistoricData = async () => {
     const { data } = await axios.get(StockChart(props.chain, days, currency));
+    console.log(data)
     setflag(true);
-    setHistoricData(data.prices);
-  };
-  const chartOptions = {
+    setHistoricData(data);
   };
 
   useEffect(() => {
@@ -57,6 +56,7 @@ const CoinInfo = (props: { chain: any }) => {
           },
           series: [{
             name: 'Sales',
+            type: 'candlestick',
             data: historicData// Set your data here
           }]
         }}
