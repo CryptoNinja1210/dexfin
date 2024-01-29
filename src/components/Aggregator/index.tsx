@@ -311,7 +311,7 @@ const chainName = {
 	avax: 'avalanche-2',
 	fantom: 'fantom',
 	zksync: 'weth',
-	polygonzkevm: '',
+	polygonzkevm: 'ethereum',
 	linea: 'linea',
 	gnosis: 'gnosis',
 	aurora: 'aurora',
@@ -630,7 +630,7 @@ export function AggregatorContainer({ tokenList, sandwichList }) {
 		}
 	};
 	const onChainChange = (newChain: { value: any; chainId: any; }) => {
-		console.log(newChain)
+		console.log(chainName[newChain.value])
 		setChain(chainName[newChain.value])
 		setAggregator(null);
 		setAmount(['10', '']);
